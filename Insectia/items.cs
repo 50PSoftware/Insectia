@@ -353,6 +353,7 @@ namespace Insectia
             dbInsectiaSet.categoryRow NewRow = categoryTable.NewcategoryRow();
             NewRow.category = Category;
             categoryTable.AddcategoryRow(NewRow);
+            Save(true);
         }
 
         public void UpdateRecord(string OldName, string OldCategory, string NewName, string NewCategory, string Content)
