@@ -261,7 +261,7 @@ namespace Insectia
                 {
                     _50P.Software.Connect.MySql.ConnectMySQL connect = new _50P.Software.Connect.MySql.ConnectMySQL(exsett.server, exsett.username, SecurePass.GetUnprotectedPassword(exsett.password));
                     connect.setDatabase(exsett.dbname);
-                    Export.Proceed(Export.filetype.MySQL, connect.Connection, items, (db != null) ? db.SelectCategories() : null);
+                    Export.Proceed(Export.filetype.MySQL, connect.Connection, items);
                 }
                 else
                     Export.Proceed((exsett.přípona == ".csv") ? Export.filetype.CSV : Export.filetype.XML, exsett.cestaKSouboru, items);

@@ -27,19 +27,6 @@ namespace Insectia
                     {
                         Database db = new Database(filenameOrConnectionString);
                         db.FillTables();
-                        source.GetItemsList();
-                        if (categories != null)
-                        {
-                            foreach (string category in categories)
-                            {
-                                var query = from _category in source.GetCategories() where _category != category select _category;
-                                foreach (string _category in query)
-                                {
-                                    db.AddCategory(category);
-                                }
-                            }
-                            db.Save(true);
-                        }
                         foreach (Seznam item in source.GetItemsList())
                         {
                             db.AddRecord(item.Nazev, item.Kategorie, item.Obsah);

@@ -354,6 +354,7 @@ namespace Insectia
             NewRow.category = Category;
             categoryTable.AddcategoryRow(NewRow);
             Save(true);
+            categoryTableAdapter.Fill(categoryTable);
         }
 
         public void UpdateRecord(string OldName, string OldCategory, string NewName, string NewCategory, string Content)
@@ -405,6 +406,7 @@ namespace Insectia
                 row.category = NewCategory;
             }
             Save(true);
+            categoryTableAdapter.Fill(categoryTable);
         }
 
         public void DeleteRecord(string Name, string Category)
