@@ -7,12 +7,6 @@ namespace _50P.Software.Connect.MySql
 {
     public class ConnectMySQL
     {
-        private string database;
-        private string server;
-        private string userId;
-        private string password;
-        private string port;
-        private string other;
         private string connection;
         public string Connection
         {
@@ -23,25 +17,19 @@ namespace _50P.Software.Connect.MySql
         }
         public ConnectMySQL(string Server, string UserID, string Password)
         {
-            server = "server=" + Server + ";";
-            userId = "user id=" + UserID + ";";
-            password = "password=" + Password + ";";
-            connection = server + userId + password;
+            connection = $"server={Server};user id={UserID};password={Password};";
         }
         public void setDatabase(string Databse)
         {
-            database = "database=" + Databse + ";";
-            connection += database;
+            connection += $"database={Databse};";
         }
         public void setPort(int Port)
         {
-            port = "port=" + Port.ToString() + ";";
-            connection += port;
+            connection += $"port={Port};";
         }
         public void setOther(string Other)
         {
-            other = Other;
-            connection += other;
+            connection += $"{Other}";
         }
     }
 }
